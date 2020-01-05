@@ -1,0 +1,181 @@
+import telepot
+import time
+import urllib3
+from pprint import pprint
+from telepot.loop import MessageLoop
+
+
+
+proxy_url = "https://proxy.server:3128"
+telepot.api._pools = {'default': urllib3.ProxyManager(proxy_url=proxy_url, num_pools=3,maxsize=10, retries=False, timeout=30)}
+telepot.api._onetime_pool_spec =(urllib3.ProxyManager, dict(proxy_url=proxy_url, num_pools=1, maxsize=1, retries=False, timeout=30))
+
+bot = telepot.Bot('927994614:AAE5AvsetXM_J9rNsMHGwGGt7-JNoUaBmS4')
+
+def handle(msg):
+    pprint(msg)
+    content_type, chat_type, chat_id = telepot.glance(msg)
+    print( content_type, chat_type, chat_id)
+  
+
+    if content_type == 'text':
+        if msg["text"]=="/start":
+            bot.sendMessage(chat_id, "hello! i am an educational bot. I assist in analysis of your courses units based on importance. Please make sure you input your course unit in words and follow the instruction strictly to enjoy this bot.")
+            bot.sendMessage(chat_id, "INSTRUCTION: ENTER COURSE UNITS  IN WORDS OR DIGITS 1 PER INPUT EXAMPLE: 'One unit or 1 unit' then you hit the send button")
+            bot.sendMessage(chat_id, " Enter your university level. example: 700 level")
+        elif msg["text"]=="100 level":
+            bot.sendMessage(chat_id, "Congrats you just staring your journey in the university, you need to start strong in order to finish well")
+            bot.sendMessage(chat_id," You can now enter you course unit.")
+        elif msg["text"]=="200 level":
+            bot.sendMessage(chat_id, "There is a saying that any level with '2' in them is mostly the hardest, but just have it in mind that the higher you go the harder it becomes")
+            bot.sendMessage(chat_id," You can now enter you course unit.")
+        elif msg["text"]=="300 level":
+            bot.sendMessage(chat_id, "Welcome")
+            bot.sendMessage(chat_id," You can now enter you course unit.")
+        elif msg["text"]=="400 level":
+            bot.sendMessage(chat_id,"For technological schools, this is normally the session for IT(Industral Training), for others, its the final level")
+            bot.sendMessage(chat_id," You can now enter you course unit.")
+        elif msg["text"]=="500 level":
+            bot.sendMessage(chat_id,"This level is a critical one because it involes the projects and as you should know by now its the final lap you have to be careful")
+            bot.sendMessage(chat_id," You can now enter you course unit.")
+        elif msg["text"]=="1 unit":
+            bot.sendMessage(chat_id," valid course unit.")
+            bot.sendMessage(chat_id," The course unit you entered is 'one' this particular unit is one of the least units, it has very little contribution to your CGPA, they are mostly practical courses. You still have to pass it. Avoid carry over.")
+        elif msg["text"]=="2 unit": 
+            bot.sendMessage(chat_id, "valid course unit")
+            bot.sendMessage(chat_id, " As low as it looks it can have a bad effect on your GP if failed, but it significance if passed has a little boost to your GP")
+        elif msg["text"]=="3 unit":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id,"This is one of the significant course unit that can distroy your GP and also your CGPA. Avoid a 'C' grade in this course and ultimately avoid carrying over the course. This kind of courses are usually taught twice in a week and i strongly advice you read this kind of courses everyday to get familier with it")
+        elif msg["text"]=="4 unit":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id, "Most universities have removed this unit from their courses because of its deadly effect on GP and CGPA, even a 'B' grade in courses with this unit can cause havoc to your GP and also CGPA. This kind of course need to be revised daily if possible, in the morning and later at night for better understanding, you can also check the web preferably  'http://www.YouTube.com' for tutorial videos on the course or wikipedia for better explanations")
+        elif msg["text"]=="One unit":
+            bot.sendMessage(chat_id," valid course unit.")
+            bot.sendMessage(chat_id," The course unit you entered is 'one' this particular unit is one of the least units, it has very little contribution to your CGPA, they are mostly practical courses. You still have to pass it. Avoid carry over.")
+        elif msg["text"]=="Two unit": 
+            bot.sendMessage(chat_id, "valid course unit")
+            bot.sendMessage(chat_id, " As low as it looks it can have a bad effect on your GP if failed, but it significance if passed has a little boost to your GP")
+        elif msg["text"]=="Three unit":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id,"This is one of the significant course unit that can distroy your GP and also your CGPA. Avoid a 'C' grade in this course and ultimately avoid carrying over the course. This kind of courses are usually taught twice in a week and i strongly advice you read this kind of courses everyday to get familier with it")
+        elif msg["text"]=="Four unit":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id, "Most universities have removed this unit from their courses because of its deadly effect on GP and CGPA, even a 'B' grade in courses with this unit can cause havoc to your GP and also CGPA. This kind of course need to be revised daily if possible, in the morning and later at night for better understanding, you can also check the web preferably  'http://www.YouTube.com' for tutorial videos on the course or wikipedia for better explanations")
+        elif msg["text"]=="one unit":
+            bot.sendMessage(chat_id," valid course unit.")
+            bot.sendMessage(chat_id," The course unit you entered is 'one' this particular unit is one of the least units, it has very little contribution to your CGPA, they are mostly practical courses. You still have to pass it. Avoid carry over.")
+        elif msg["text"]=="two unit": 
+            bot.sendMessage(chat_id, "valid course unit")
+            bot.sendMessage(chat_id, " As low as it looks it can have a bad effect on your GP if failed, but it significance if passed has a little boost to your GP")
+        elif msg["text"]=="three unit":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id,"This is one of the significant course unit that can distroy your GP and also your CGPA. Avoid a 'C' grade in this course and ultimately avoid carrying over the course. This kind of courses are usually taught twice in a week and i strongly advice you read this kind of courses everyday to get familier with it")
+        elif msg["text"]=="four unit":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id, "Most universities have removed this unit from their courses because of its deadly effect on GP and CGPA, even a 'B' grade in courses with this unit can cause havoc to your GP and also CGPA. This kind of course need to be revised daily if possible, in the morning and later at night for better understanding, you can also check the web preferably  'http://www.YouTube.com' for tutorial videos on the course or wikipedia for better explanations")
+        elif msg["text"]=="ONE UNIT":
+            bot.sendMessage(chat_id," valid course unit.")
+            bot.sendMessage(chat_id," The course unit you entered is 'one' this particular unit is one of the least units, it has very little contribution to your CGPA, they are mostly practical courses. You still have to pass it. Avoid carry over.")
+        elif msg["text"]=="TWO UNIT": 
+            bot.sendMessage(chat_id, "valid course unit")
+            bot.sendMessage(chat_id, " As low as it looks it can have a bad effect on your GP if failed, but it significance if passed has a little boost to your GP")
+        elif msg["text"]=="THREE UNIT":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id,"This is one of the significant course unit that can distroy your GP and also your CGPA. Avoid a 'C' grade in this course and ultimately avoid carrying over the course. This kind of courses are usually taught twice in a week and i strongly advice you read this kind of courses everyday to get familier with it")
+        elif msg["text"]=="FOUR UNIT":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id, "Most universities have removed this unit from their courses because of its deadly effect on GP and CGPA, even a 'B' grade in courses with this unit can cause havoc to your GP and also CGPA. This kind of course need to be revised daily if possible, in the morning and later at night for better understanding, you can also check the web preferably  'http://www.YouTube.com' for tutorial videos on the course or wikipedia for better explanations")
+        elif msg["text"]=="oNe unit":
+            bot.sendMessage(chat_id," valid course unit.")
+            bot.sendMessage(chat_id," The course unit you entered is 'one' this particular unit is one of the least units, it has very little contribution to your CGPA, they are mostly practical courses. You still have to pass it. Avoid carry over.")
+        elif msg["text"]=="tWo unit": 
+            bot.sendMessage(chat_id, "valid course unit")
+            bot.sendMessage(chat_id, " As low as it looks it can have a bad effect on your GP if failed, but it significance if passed has a little boost to your GP")
+        elif msg["text"]=="tHree unit":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id,"This is one of the significant course unit that can distroy your GP and also your CGPA. Avoid a 'C' grade in this course and ultimately avoid carrying over the course. This kind of courses are usually taught twice in a week and i strongly advice you read this kind of courses everyday to get familier with it")
+        elif msg["text"]=="fOur unit":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id, "Most universities have removed this unit from their courses because of its deadly effect on GP and CGPA, even a 'B' grade in courses with this unit can cause havoc to your GP and also CGPA. This kind of course need to be revised daily if possible, in the morning and later at night for better understanding, you can also check the web preferably  'http://www.YouTube.com' for tutorial videos on the course or wikipedia for better explanations")
+        elif msg["text"]=="onE unit":
+            bot.sendMessage(chat_id," valid course unit.")
+            bot.sendMessage(chat_id," The course unit you entered is 'one' this particular unit is one of the least units, it has very little contribution to your CGPA, they are mostly practical courses. You still have to pass it. Avoid carry over.")
+        elif msg["text"]=="twO unit": 
+            bot.sendMessage(chat_id, "valid course unit")
+            bot.sendMessage(chat_id, " As low as it looks it can have a bad effect on your GP if failed, but it significance if passed has a little boost to your GP")
+        elif msg["text"]=="thRee unit":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id,"This is one of the significant course unit that can distroy your GP and also your CGPA. Avoid a 'C' grade in this course and ultimately avoid carrying over the course. This kind of courses are usually taught twice in a week and i strongly advice you read this kind of courses everyday to get familier with it")
+        elif msg["text"]=="foUr unit":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id, "Most universities have removed this unit from their courses because of its deadly effect on GP and CGPA, even a 'B' grade in courses with this unit can cause havoc to your GP and also CGPA. This kind of course need to be revised daily if possible, in the morning and later at night for better understanding, you can also check the web preferably  'http://www.YouTube.com' for tutorial videos on the course or wikipedia for better explanations")
+        elif msg["text"]=="thrEe unit":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id,"This is one of the significant course unit that can distroy your GP and also your CGPA. Avoid a 'C' grade in this course and ultimately avoid carrying over the course. This kind of courses are usually taught twice in a week and i strongly advice you read this kind of courses everyday to get familier with it")
+        elif msg["text"]=="fouR unit":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id, "Most universities have removed this unit from their courses because of its deadly effect on GP and CGPA, even a 'B' grade in courses with this unit can cause havoc to your GP and also CGPA. This kind of course need to be revised daily if possible, in the morning and later at night for better understanding, you can also check the web preferably  'http://www.YouTube.com' for tutorial videos on the course or wikipedia for better explanations")
+        elif msg["text"]=="threE unit":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id,"This is one of the significant course unit that can distroy your GP and also your CGPA. Avoid a 'C' grade in this course and ultimately avoid carrying over the course. This kind of courses are usually taught twice in a week and i strongly advice you read this kind of courses everyday to get familier with it")
+        elif msg["text"]=="1 units":
+            bot.sendMessage(chat_id," valid course unit.")
+            bot.sendMessage(chat_id," The course unit you entered is 'one' this particular unit is one of the least units, it has very little contribution to your CGPA, they are mostly practical courses. You still have to pass it. Avoid carry over.")
+        elif msg["text"]=="2 units": 
+            bot.sendMessage(chat_id, "valid course unit")
+            bot.sendMessage(chat_id, " As low as it looks it can have a bad effect on your GP if failed, but it significance if passed has a little boost to your GP")
+        elif msg["text"]=="3 units":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id,"This is one of the significant course unit that can distroy your GP and also your CGPA. Avoid a 'C' grade in this course and ultimately avoid carrying over the course. This kind of courses are usually taught twice in a week and i strongly advice you read this kind of courses everyday to get familier with it")
+        elif msg["text"]=="4 units":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id, "Most universities have removed this unit from their courses because of its deadly effect on GP and CGPA, even a 'B' grade in courses with this unit can cause havoc to your GP and also CGPA. This kind of course need to be revised daily if possible, in the morning and later at night for better understanding, you can also check the web preferably  'http://www.YouTube.com' for tutorial videos on the course or wikipedia for better explanations")
+        elif msg["text"]=="1units":
+            bot.sendMessage(chat_id," valid course unit.")
+            bot.sendMessage(chat_id," The course unit you entered is 'one' this particular unit is one of the least units, it has very little contribution to your CGPA, they are mostly practical courses. You still have to pass it. Avoid carry over.")
+        elif msg["text"]=="2units": 
+            bot.sendMessage(chat_id, "valid course unit")
+            bot.sendMessage(chat_id, " As low as it looks it can have a bad effect on your GP if failed, but it significance if passed has a little boost to your GP")
+        elif msg["text"]=="3units":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id,"This is one of the significant course unit that can distroy your GP and also your CGPA. Avoid a 'C' grade in this course and ultimately avoid carrying over the course. This kind of courses are usually taught twice in a week and i strongly advice you read this kind of courses everyday to get familier with it")
+        elif msg["text"]=="4units":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id, "Most universities have removed this unit from their courses because of its deadly effect on GP and CGPA, even a 'B' grade in courses with this unit can cause havoc to your GP and also CGPA. This kind of course need to be revised daily if possible, in the morning and later at night for better understanding, you can also check the web preferably  'http://www.YouTube.com' for tutorial videos on the course or wikipedia for better explanations")
+        elif msg["text"]=="1u":
+            bot.sendMessage(chat_id," valid course unit.")
+            bot.sendMessage(chat_id," The course unit you entered is 'one' this particular unit is one of the least units, it has very little contribution to your CGPA, they are mostly practical courses. You still have to pass it. Avoid carry over.")
+        elif msg["text"]=="2u": 
+            bot.sendMessage(chat_id, "valid course unit")
+            bot.sendMessage(chat_id, " As low as it looks it can have a bad effect on your GP if failed, but it significance if passed has a little boost to your GP")
+        elif msg["text"]=="3u":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id,"This is one of the significant course unit that can distroy your GP and also your CGPA. Avoid a 'C' grade in this course and ultimately avoid carrying over the course. This kind of courses are usually taught twice in a week and i strongly advice you read this kind of courses everyday to get familier with it")
+        elif msg["text"]=="4u":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id, "Most universities have removed this unit from their courses because of its deadly effect on GP and CGPA, even a 'B' grade in courses with this unit can cause havoc to your GP and also CGPA. This kind of course need to be revised daily if possible, in the morning and later at night for better understanding, you can also check the web preferably  'http://www.YouTube.com' for tutorial videos on the course or wikipedia for better explanations")
+        elif msg["text"]=="1":
+            bot.sendMessage(chat_id," valid course unit.")
+            bot.sendMessage(chat_id," The course unit you entered is 'one' this particular unit is one of the least units, it has very little contribution to your CGPA, they are mostly practical courses. You still have to pass it. Avoid carry over.")
+        elif msg["text"]=="2": 
+            bot.sendMessage(chat_id, "valid course unit")
+            bot.sendMessage(chat_id, " As low as it looks it can have a bad effect on your GP if failed, but it significance if passed has a little boost to your GP")
+        elif msg["text"]=="3":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id,"This is one of the significant course unit that can distroy your GP and also your CGPA. Avoid a 'C' grade in this course and ultimately avoid carrying over the course. This kind of courses are usually taught twice in a week and i strongly advice you read this kind of courses everyday to get familier with it")
+        elif msg["text"]=="4":
+            bot.sendMessage(chat_id,"valid course unit")
+            bot.sendMessage(chat_id, "Most universities have removed this unit from their courses because of its deadly effect on GP and CGPA, even a 'B' grade in courses with this unit can cause havoc to your GP and also CGPA. This kind of course need to be revised daily if possible, in the morning and later at night for better understanding, you can also check the web preferably  'http://www.YouTube.com' for tutorial videos on the course or wikipedia for better explanations")
+
+        
+        else:
+            bot.sendMessage(chat_id, "ERROR!")
+            bot.sendMessage(chat_id, " You are seeing this message because you have entered unit code in digits or you entered an invalid command. Please read the instructions and try again.")
+       
+MessageLoop(bot,handle).run_as_thread()
+print ('I AM ACTIVE.....')
+
+while 1:
+    time.sleep(30)        
+        
